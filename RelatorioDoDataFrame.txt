@@ -1,0 +1,88 @@
+ Relatório Técnico: Criação de DataFrame com Pandas
+📌 Objetivo
+O objetivo do código é demonstrar o uso básico da biblioteca Pandas para manipulação de dados em Python. Ele cria um DataFrame com informações de pessoas, realiza seleções de colunas, filtragens condicionais e adiciona uma nova coluna derivada.
+
+🛠️ Tecnologias Utilizadas
+Linguagem: Python 3
+
+Biblioteca: pandas (importada como pd)
+
+🧱 Descrição Estrutural do Código
+1. Importação da Biblioteca
+python
+Copiar
+Editar
+import pandas as pd
+A biblioteca pandas é importada com o alias pd, que é a convenção comum.
+
+2. Criação de um Dicionário de Dados
+python
+Copiar
+Editar
+Dados = {
+    "Nome": ["Alex", "Reinaldo", "Isac", "Diego"],
+    "Idade": [20, 19, 19, 20],
+    "Cidade": ["SP", "Cornolandia", "Bollywood", "Cruzeiro"]
+}
+Foi criado um dicionário chamado Dados, contendo listas associadas a três chaves: Nome, Idade e Cidade.
+
+3. Conversão para DataFrame
+python
+Copiar
+Editar
+df = pd.DataFrame(Dados)
+O dicionário é transformado em um DataFrame (df), estrutura de dados tabular amplamente utilizada com pandas.
+
+4. Seleção de Coluna
+python
+Copiar
+Editar
+Idades = df["Idade"]
+É feita a seleção da coluna “Idade” e armazenada em uma nova variável Idades.
+
+5. Filtragem de Dados
+python
+Copiar
+Editar
+InteriorDeSaoPaulo = df[df["Cidade"] == "Cruzeiro"]
+Filtra-se o DataFrame para obter apenas os registros cuja cidade seja “Cruzeiro”.
+
+6. Adição de Nova Coluna
+python
+Copiar
+Editar
+df["Nome e Cidade"] = df["Nome"] + " " + df["Cidade"]
+Cria-se uma nova coluna chamada Nome e Cidade, concatenando os valores das colunas “Nome” e “Cidade”.
+
+7. Exibição dos Dados
+python
+Copiar
+Editar
+print(df)
+print(Idades)
+print(InteriorDeSaoPaulo)
+Exibe-se o DataFrame completo com a nova coluna, a lista de idades e o subconjunto filtrado.
+
+✅ Resultados Esperados
+A saída esperada será:
+
+O DataFrame completo com a nova coluna “Nome e Cidade”
+
+A coluna com todas as idades
+
+Apenas a linha onde a cidade é “Cruzeiro”
+
+📈 Potenciais Melhorias
+Adicionar tratamento de erros (ex: checar se colunas existem antes de operar)
+
+Renomear variáveis para seguir a convenção snake_case (ex: Dados → dados)
+
+Exportar o DataFrame para um arquivo CSV ou Excel, se necessário
+
+Adicionar mais validações ou filtros com base em outras colunas
+
+📚 Conclusão
+O código cumpre bem sua proposta de ilustrar operações básicas com DataFrames do Pandas. Ele serve como um bom ponto de partida para quem está aprendendo a manipular dados com Python.
+
+Diego de Almeida Silva = Gerenciador dos filtros
+Alex Vieira Ramos = Desenvolvedor do DataFrame
